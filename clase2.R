@@ -1,0 +1,13 @@
+
+tabal1<-read.table("tabla1.txt",header=F)
+tabal2<-read.table("https://www.nrc.gov/reading-rm/doc-collections/event-status/reactor-status/PowerReactorStatusForLast365Days.txt",header = T, sep = "|")
+tabla3<-read.table("tabla3.txt",header=F,sep = "/",strip.white = T,na.strings = "VACIO")
+View(tabla3)
+tabla4<-read.csv("tabla4.csv",header=T,quote="\"",stringsAsFactors=T,strip.white=T)
+tabla5<-read.csv2("tabla5.csv2",header=F,quote="\"",row.names=c("M","N","O","P","Q"),col.names=c("X","Y","Z","A","B"),fill=T,strip.white=T,stringsAsFactors = T)
+install.packages("XLConnect")
+library(XLConnect)
+climate<-readWorksheetFromFile("climate.xlsx",sheet=1)
+climate1<- readWorksheetFromFile("climate.xlsx",sheet=1, startRow=26, endCol=4)
+climate2<- readWorksheetFromFile("climate.xlsx",sheet=1, region="A1:G13")
+climatex<-read.xlsx("climate.xlsx",sheet=1)
