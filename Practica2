@@ -1,0 +1,26 @@
+####Ejercicio 1
+Id.1<-as.numeric(gl(4,3))
+Letter<-c("a","b","c")
+x=seq(1,43,along.with=Id.1)
+y=seq(-20,0,along.with=Id.1)
+
+df<-data.frame(Id,Letter,x,y)
+View(df)
+####Ejercicio 2
+df1.1<-subset(df,Letter=="a",select=c(x,y))
+df2.1<-subset(df,Letter=="b",select=c(x,y))
+df3.1<-subset(df,Letter=="c",select=c(x,y))
+View(df1.1)
+dfn<-data.frame(df1.1,df2.1,df3.1)
+View(dfn)
+
+####Ejercicio 3
+Id<-1:4
+Age<-c(14,12,15,10)
+Sex<-c("F","M","M","F")
+Code<-c("a","b","c","d")
+df1<-data.frame(Id,Age)
+df2<-data.frame(Id,Sex,Code)
+df2$Id<-NULL
+M<-data.frame(df1,df2)
+View(M)
