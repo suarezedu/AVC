@@ -1,0 +1,22 @@
+mbase<-function(b)
+{
+  le<-read.csv(b,header=F)
+  medias = apply(le,2,mean)
+  minimos = apply(le,2,min)
+  maximos = apply(le,2,max)
+  df<-data.frame(as.numeric(medias),as.numeric(minimos),as.numeric(maximos))
+  
+  #for(i in 1:3){
+   # x11()
+  #plot(df[,i])
+  #}
+  
+  par(mfrow=c(1,3))
+  plot(medias,sub="media")
+  plot(minimos,sub="minimo")
+  plot(maximos,sub="maximo")
+  
+  return(df)
+  
+}
+mbase("C://Users//USUARIO//Documents//inflammation-02.csv")
